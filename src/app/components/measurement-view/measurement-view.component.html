@@ -1,0 +1,32 @@
+<h2 class="page-header">
+  View Measurements
+</h2>
+<div *ngIf="parameters">
+  <div class="input-group well">
+    <select class="form-control" type="text" [(ngModel)]="parameterCode">
+        <option *ngFor="let parameter of parameters" [ngValue]="parameter.code">{{ parameter.description }} <small> ({{ parameter.unit }}) </small></option>
+    </select>
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit" (click)="onRefresh()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+    </span>
+  </div>
+</div>
+
+<div *ngIf="measurements">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="display: block;">
+      <canvas baseChart width="400" height="200"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <script src="../../../../node_modules/chart.js/src/chart.js"></script>
+  </div>
+</div>

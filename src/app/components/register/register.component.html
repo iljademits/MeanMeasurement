@@ -1,0 +1,17 @@
+<h2 class="page-header">Register</h2>
+<form (submit)="onRegisterSubmit()" class="well clearfix">
+  <div class="form-group">
+    <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name"/>
+  </div>
+  <div class="form-group">
+    <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username"/>
+  </div>
+  <div class="form-group">
+    <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password"/>
+  </div>
+  <div class="form-group">
+    <input type="password" [(ngModel)]="passwordCtrl" name="passwordCtrl" class="form-control" placeholder="Type Password again"/>
+  </div>
+
+  <input type="submit" class="btn btn-primary pull-right" value="Submit" />
+</form>

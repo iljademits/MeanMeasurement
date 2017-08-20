@@ -1,0 +1,15 @@
+<h2 class="page-header">
+  Input Measurements
+</h2>
+<div *ngIf="parameters">
+  <div class="input-group well">
+    <select class="form-control" type="text" [(ngModel)]="parameterCode">
+        <option *ngFor="let parameter of parameters" [ngValue]="parameter.code">{{ parameter.description }} <small> ({{ parameter.unit }}) </small></option>
+    </select>
+    <span class="input-group-addon"><span class="glyphicon glyphicon-stats"></span> Value:</span>
+    <input class="form-control" type="number" [(ngModel)]="parameterValue" name="value" value="value">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="submit" (click)="onFormSubmit()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+    </span>
+  </div>
+</div>

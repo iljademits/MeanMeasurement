@@ -1,0 +1,27 @@
+img {
+  float: left;
+  height: 120px;
+}
+
+.blue {
+  font-weight: bold;
+  color: #286090;
+}
+
+.rcorners {
+    border-radius: 5px;
+    border: 1px solid #286090;
+    padding: 10px 20px;
+    margin: 5px;
+    float: left;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron {
+  background: white;
+}
